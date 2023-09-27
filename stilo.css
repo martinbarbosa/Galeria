@@ -1,0 +1,223 @@
+
+.container-main{
+
+  display:grid;
+  background-color: black;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr ;
+  width:2000px;
+  height:1000px;
+}
+
+
+.container-header{
+  border:2px solid black;
+  text-align:center;
+  background-color:rgba(247, 6, 6, 0.884);
+  font-size:25px;
+  font-weight:bold;
+  grid-column:1/3;
+  grid-row:1;
+}
+
+.imagen-liga{
+  width: 1300px;
+  height: 300px;
+}
+
+.name-liga{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(238, 223, 9);
+  font-family: Impact;
+}
+
+
+.contenedor{
+  display:flex;
+  justify-content:space-between;
+  background-color:rgba(247, 246, 241, 0.938)
+  width:100px;
+  grid-column:1/3;
+  grid-row:2;
+}
+
+
+.gallery-image {
+  position: relative;
+  flex-basis: calc(33.33% - 20px); /* Ancho de imagen equiespaciado con margen */
+  margin: 10px;
+  overflow: hidden; /* Evita que el texto se desborde de la imagen */
+}
+
+.gallery-image img {
+  max-width: 100%;
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+  object-fit: cover; /* Hace que la imagen rellene el espacio sin distorsionarse */
+}
+
+.gallery-image:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.gallery-text {
+  position: absolute;
+  top: 50%; /* Alinea verticalmente en el centro */
+  left: 50%; /* Alinea horizontalmente en el centro */
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.gallery-text-complement {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 80%;
+  max-width: 400px;
+}
+
+
+
+.gallery-image:hover .gallery-text,
+.gallery-image:hover .gallery-text-complement {
+  opacity: 1;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 40px auto;
+  width: 400px;
+  height: 400px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.main-pagina {
+    display: grid;
+    background-color: black;
+    grid-template-areas:
+    "header header"
+    "nav article"
+    "footer footer";
+  grid-template-columns: 1fr 6fr;
+  width: 100%; /* Ancho fijo */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.header-paginas {
+  background-color: rgb(238, 8, 8);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: static;
+  top: 0; 
+  left: 0;
+  z-index: 100; /* Asegura que el header esté por encima de otros elementos */
+  grid-area:header;
+  margin-bottom: 20px;
+}
+
+.maintitle {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  color: #2a0eca;
+}
+
+nav {
+  border: 2px solid rgb(236, 8, 8);
+  background-color: rgb(29, 28, 28);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  grid-area: nav;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(243, 4, 4, 0.952);
+  max-height: 100%;
+}
+
+article {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  grid-area: article;
+}
+
+.image-gallery-article img{
+  border-radius: 15px;
+  flex: 1; /* Las imágenes ocuparán el espacio disponible en cada fila */
+  max-width: auto; /* Ajusta el ancho máximo al 100% del contenedor */
+  max-height: 200px; /* Establece una altura máxima para las imágenes */
+  object-fit: cover; /* Mantiene la proporción original sin distorsionar */
+  transition: transform 0.9s ease; /* Agrega una transición suave para el efecto de escala */
+}
+
+.image-gallery-article img:hover {
+  border-radius: 15px;
+  transform: scale(3);
+  object-fit: scale-down;
+  z-index: 1; /* Coloca la imagen sobre las demás al hacer hover */  
+  border-radius: 15px;
+}
+
+.selected-button{
+  background-color: #e04903;
+}
+
+
+.contenedor-footer{
+  border:2px solid black;
+  text-align:center;
+  background-color:rgba(66, 5, 233, 0.945);
+  font-size:15px;
+  font-weight:bold;
+  grid-column:1/3;
+  grid-row:3;
+}
